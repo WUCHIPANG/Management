@@ -10,7 +10,9 @@ import { iconsSet as icons } from './assets/icons/icons.js'
 import store from '@/sotre'
 window.$ = window.jQuery = require('jquery');
 
-
+// 引入 common.js
+import  common  from './utils/common'
+Vue.prototype.common = common
 
 Vue.config.performance = true
 Vue.use(Vuex)

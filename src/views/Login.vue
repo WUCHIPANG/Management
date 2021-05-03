@@ -7,23 +7,23 @@
             <CCard class="p-4">
               <CCardBody>
                 <CForm>
-                  <h1>Management Center Login</h1>
-                  <p class="text-muted">Sign In to your account</p>
+                  <h1><strong>管理中心登入</strong></h1>
+                  <!-- <p class="text-muted">Sign In to your account</p> -->
                   <!-- <CSelect :options="['護理站', '接單人員', '派遣公司']" placeholder="Please select" /> -->
-                  <CInput placeholder="Username" autocomplete="username" v-model="username">
+                  <CInput placeholder="帳號" autocomplete="username" v-model="username">
                     <template #prepend-content><CIcon name="cil-user"/></template>
                   </CInput>
-                  <CInput placeholder="Password" type="password" autocomplete="curent-password" v-model="password">
+                  <CInput placeholder="密碼" type="password" autocomplete="curent-password" v-model="password">
                     <template #prepend-content><CIcon name="cil-lock-locked"/></template>
                   </CInput>
                   <CRow>
                     <CCol col="6" class="text-left">
-                      <CButton color="primary" class="px-4" @click="login(username, password)">Login</CButton>
+                      <CButton color="primary" class="px-4" @click="login(username, password)" style="font-size:20px;">登入</CButton>
                     </CCol>
-                    <CCol col="6" class="text-right">
+                    <!-- <CCol col="6" class="text-right">
                       <CButton color="link" class="px-0">Forgot password?</CButton>
                       <CButton color="link" class="d-lg-none">Register now!</CButton>
-                    </CCol>
+                    </CCol> -->
                   </CRow>
                 </CForm>
               </CCardBody>
@@ -60,3 +60,8 @@ export default {
   },
 };
 </script>
+<style>
+input::placeholder {
+  font-size: 20px;
+}
+</style>

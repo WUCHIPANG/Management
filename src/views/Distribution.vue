@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div style="font-size:28px;">
     <CCard>
       <CCardBody>
-        <CDataTable :items="items" :fields="fields" table-filter items-per-page-select :items-per-page="5" hover sorter pagination>
+        <CDataTable :items="items" :fields="fields" table-filter column-filter items-per-page-select :items-per-page="5" hover sorter pagination>
           <template #status="{item}">
             <td>
               <CBadge :color="getBadge(item.status)">
@@ -32,7 +32,7 @@
 
           <template #assign="{item, index}">
             <td class="py-2">
-              <CButton color="dark" variant="outline" square size="sm" @click="assign(item, index)">
+              <CButton color="dark" variant="outline" square size="lg" @click="assign(item, index)">
                 指派
               </CButton>
             </td>
@@ -48,10 +48,10 @@ export default {
   data() {
     return {
       items: [
-        { number: '20210419210653', start: '04/28 10:30', task: '檢體運送', status: '游離' },
-        { number: '20210419182622', start: '04/28 10:30', task: '藥物傳送', status: '緊急' },
-        { number: '20210412150616', start: '04/28 10:30', task: '病人檢查', status: '異常' },
-        { number: '20210409050810', start: '04/28 10:30', task: '領藥', status: '游離' },
+        { number: '20210419210653', start: '10:13:25', task: '檢體運送', status: '游離' },
+        { number: '20210419182622', start: '10:15:13', task: '藥物傳送', status: '緊急' },
+        { number: '20210412150616', start: '10:23:42', task: '病人檢查', status: '異常' },
+        { number: '20210409050810', start: '10:23:55', task: '領藥', status: '游離' },
       ],
       details: [],
       collapseDuration: 0,

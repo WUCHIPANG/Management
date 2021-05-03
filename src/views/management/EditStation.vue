@@ -6,7 +6,7 @@
         <CInput label="護理站範圍" placeholder="請輸入範圍 ex:A棟7樓B區" horizontal />
         <CInput label="帳號" placeholder="請輸入帳號" horizontal />
         <CInput label="密碼" placeholder="請輸入密碼" type="password" horizontal />
-        <CInput label="認證電話" placeholder="請輸入認證電話" type="password" description="提供忘記密碼時使用" horizontal />
+        <CInput label="認證電話" placeholder="請輸入認證電話" description="提供忘記密碼時使用" horizontal />
         <CInput label="負責人" placeholder="請輸入負責人" horizontal />
         <div style="height:30px;">設定範圍:</div>
         <CSelect label="第一層" horizontal :options="optionsType" placeholder="" />
@@ -49,9 +49,6 @@ export default {
 </script>
 <style>
 input::placeholder {
-  font-size: 20px;
-}
-select {
   font-size: 20px;
 }
 </style>

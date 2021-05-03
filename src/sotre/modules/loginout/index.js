@@ -8,6 +8,8 @@ import secret from '../../../utils/secret'
 const state = {
   token: '',
   usp: '',
+  password: '',
+  passwordErr:false //密碼驗證錯誤訊息
 }
 
 const actions = {
@@ -21,63 +23,66 @@ const actions = {
       .split('')
       .reverse()
       .join('')
-    // console.log('usp:', usp, user)
-    // console.log('actionsData', data.password, secret.Decrypt(data.password))
+
     if (data.user == 'demo' && secret.Decrypt(data.password) == user) {
-      //   console.log('OK')
       commit(types.SETTOKEN, data)
       window.sessionStorage.setItem('user', data.user)
-
-      // 要打開(暫時)
       router.push('/distribution')
     } else {
       console.log('err')
     }
-    // let encryptPw = secret.Encrypt(data.password);
-
-    // console.log(encryptPw, encryptUsp)
-    // if (data.user == 'demo' && secret.Decrypt(encryptPw) === secret.Decrypt(encryptUsp)) {
-    //             console.log('OK')
-    //             commit(types.SETTOKEN, data)
-    //             window.sessionStorage.setItem('user', data.user)
-
-    //             // 要打開(暫時)
-    //             //   router.push("/dashboard");
-    //         } else {
-    //             console.log('err')
-    //         }
-    // if (data.password) {
-
-    // // axios.post().then(res => {
-
-    // // }).catch(error => {
-
-    // // })
-    // } else {
-    //     console.log('err')
-    // }
-
-    // window.location.assign("/");
   },
   userLogout({commit}) {
     commit(types.DELTOKEN)
   },
+  checkPW({ commit }, pw) {
+    const usn1 = '62'
+    const usn2 = '42'
+    const usn3 = '02'
+    const usn4 = '38'
+    let usp = usn1 + usn2 + usn3 + usn4
+    let user = usp
+      .split('')
+      .reverse()
+      .join('')
+    if (secret.Decrypt(pw) == user) {
+      commit(types.CHECKPW, pw)
+      commit(types.HIDE_PASSWORDERR)
+
+     console.log('check')
+    } else {
+      console.log('err')
+       commit(types.PASSWORDERR)
+    }
+   }
 }
 
 const mutations = {
   [types.SETTOKEN](state, token) {
     state.token = token
 
-    // window.location.assign("/dashboard#");
+
   },
   [types.DELTOKEN](state) {
+    console.log('1')
     state.token = ''
-    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('user')
     window.location.assign('/Login')
+  },
+  [types.CHECKPW](state, password) {
+    state.password = password
+  },
+  [types.PASSWORDERR](state) {
+    state.passwordErr = true
+  },
+  [types.HIDE_PASSWORDERR](state) {
+    state.passwordErr = false
   },
 }
 
-const getters = {}
+const getters = {
+  get_passwordErr: state => state.passwordErr
+}
 
 export default {
   state,

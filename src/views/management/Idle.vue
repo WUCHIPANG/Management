@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="font-size:28px;">
     <CCard>
       <CCardBody>
         <CDataTable :items="items" :fields="fields" table-filter items-per-page-select :items-per-page="5" hover sorter pagination>
@@ -11,29 +11,10 @@
             </td>
           </template>
 
-          <template #details="{item}">
-            <CCollapse :show="Boolean(item._toggled)" :duration="collapseDuration">
-              <CCardBody>
-                <CMedia :aside-image-props="{ height: 102 }">
-                  <h4>
-                    {{ item.username }}
-                  </h4>
-                  <p class="text-muted">User since: {{ item.registered }}</p>
-                  <CButton size="sm" color="info" class="">
-                    User Settings
-                  </CButton>
-                  <CButton size="sm" color="danger" class="ml-1">
-                    Delete
-                  </CButton>
-                </CMedia>
-              </CCardBody>
-            </CCollapse>
-          </template>
-
           <template #assign="{item, index}">
             <td class="py-2">
-              <CButton color="dark" variant="outline" square size="sm" @click="assign(item, index)">
-                指派
+              <CButton color="dark" variant="outline" square size="lg" @click="assign(item, index)">
+                確認
               </CButton>
             </td>
           </template>
@@ -44,14 +25,15 @@
 </template>
 <script>
 export default {
-  name: 'TaskList',
+  name: 'Idle',
   data() {
     return {
       items: [
-        { staff: 'Estavan', location: '3F檢查室', task: '檢體運送' },
-        { staff: 'Estavan', location: '3F檢查室', task: '檢體運送' },
-        { staff: 'Estavan', location: '3F檢查室', task: '檢體運送' },
-        { staff: 'Estavan', location: '3F檢查室', task: '檢體運送' },
+        { staff: '陳琦芬', location: '3F檢查室', task: '病人檢查', status: '閒置' },
+        { staff: '何怡廷', location: '2F領藥', task: '領藥', status: '閒置' },
+        { staff: '戴憶凡', location: '10F護理站', task: '物件運送', status: '閒置' },
+        { staff: '趙明倫', location: '5F檢查室', task: '病人檢查', status: '進行中' },
+        { staff: '曾哲嘉', location: '8F檢查室', task: '檢體運送', status: '進行中' },
       ],
       details: [],
       collapseDuration: 0,
@@ -62,9 +44,9 @@ export default {
       return [
         // _style: 'min-width:200px'
         { key: 'staff', label: '人員' },
-        { key: 'location', label: '上次地點' },
+        { key: 'location', label: '所在地點' },
         { key: 'task', label: '上次內容' },
-
+        { key: 'status', label: '狀態' },
         {
           key: 'assign',
           label: '',
@@ -75,17 +57,20 @@ export default {
       ];
     },
   },
+
   methods: {
     getBadge(status) {
       switch (status) {
         case '進行中':
           return 'success';
-        case '緊急':
-          return 'danger';
+        case '已完成':
+          return 'secondary';
         case '異常':
-          return 'warning';
-        case '游離':
+          return 'danger';
+        case '已預約':
           return 'info';
+        case '閒置':
+          return 'primary';
         default:
           'primary';
       }

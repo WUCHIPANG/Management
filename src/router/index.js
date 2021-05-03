@@ -21,7 +21,7 @@ function configRoutes () {
     {
       path: '/',
       redirect: '/distribution',
-      name: 'Home',
+      name: '首頁',
       meta: {
           requireAuth: true,
          },
@@ -30,27 +30,47 @@ function configRoutes () {
       children: [
         {
           path: 'distribution',
-          name: 'Distribution',
+          name: '指派',
           component: resolve => require(['@/views/Distribution'], resolve)
         },
         {
           path: 'idle',
-          name: 'Idle',
+          name: '指派人員',
           component: resolve => require(['@/views/management/Idle'], resolve)
         },
         {
-          path: 'employee',
-          name: 'Employee',
-          component: resolve => require(['@/views/management/Employee'], resolve)
+          path: 'tasklist',
+          name: '進行中派單',
+          component: resolve => require(['@/views/management/TaskList'], resolve)
+        },
+         {
+          path: 'taskcontenting/:num/:status',
+          name: '派單內容',
+          component: resolve => require(['@/views/management/TaskContentIng'], resolve)
+        },
+        {
+          path: 'taskcontenting',
+          name: '派單內容',
+          component: resolve => require(['@/views/management/TaskContentIng'], resolve)
+        },
+        {
+          path: 'historytask',
+          name: '歷史派工紀錄',
+          component: resolve => require(['@/views/management/HistoryTask'], resolve)
+        },
+        {
+          path: 'attendance',
+          name: '出勤紀錄',
+          component: resolve => require(['@/views/management/Attendance'], resolve)
         },
         {
           path: 'addemployee',
-          name: 'Add Employee',
+          name: '新增人員',
           component: resolve => require(['@/views/management/AddEmployee'], resolve)
         },
         {
           path: 'employeeContent/:id/:name',
-          name: 'Employee Content',
+          name: '編輯人員',
           component: resolve => require(['@/views/management/EmployeeContent'], resolve)
         },
         {
@@ -60,33 +80,63 @@ function configRoutes () {
         },
         {
           path: 'nursingstation',
-          name: 'Nursing Station',
+          name: '護理站派單紀錄',
           component: resolve => require(['@/views/management/NursingStation'], resolve)
+        },
+         {
+          path: 'mgmtaddtask',
+          name: '補單',
+          component: resolve => require(['@/views/management/MgmtAddTask'], resolve)
+        },
+          {
+          path: 'taskcontent/:num/:status',
+          name: '派單內容',
+          component: resolve => require(['@/views/management/TaskContent'], resolve)
+        },
+        {
+          path: 'taskcontent',
+          name: 'Task Content',
+          component: resolve => require(['@/views/management/TaskContent'], resolve)
         },
         {
           path: 'addstation',
-          name: 'Add Station',
+          name: '新增護理站',
           component: resolve => require(['@/views/management/AddStation'], resolve)
         },
         {
+          path: 'editstation',
+          name: '編輯護理站',
+          component: resolve => require(['@/views/management/EditStation'], resolve)
+        },
+        {
           path: 'managementreport',
-          name: 'Management Report',
+          name: '管理報表',
           component: resolve => require(['@/views/management/ManagementReport'], resolve)
         },
         {
           path: 'empoyeemgmt',
-          name: 'Empoyee Management',
+          name: '人員管理',
           component: resolve => require(['@/views/management/EmpoyeeMgmt'], resolve)
         },
         {
           path: 'nursingstationmgmt',
-          name: 'Nursing Station Management',
+          name: '護理站管理',
           component: resolve => require(['@/views/management/NursingStationMgmt'], resolve)
         },
         {
           path: 'optionMgmt',
-          name: 'Option Management',
-          component: resolve => require(['@/views/management/NursingStationMgmt'], resolve)
+          name: '派遣選項管理',
+          component: resolve => require(['@/views/management/OptionMgmt'], resolve)
+        },
+        {
+          path: 'announcement',
+          name: '公告',
+          component: resolve => require(['@/views/management/Announcement'], resolve)
+        },
+        {
+          path: 'system',
+          name: '系統設定',
+          component: resolve => require(['@/views/management/System'], resolve)
         }
       ]
     },

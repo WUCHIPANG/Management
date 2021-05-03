@@ -11,13 +11,15 @@
       <CHeaderNavItem class="d-md-down-none mx-2">
         <CHeaderNavLink>
           <CIcon name="cil-bell" />
+          <!-- 有新派單時出現 -->
+          <CBadge color="danger" class="mfs-auto">{{ itemsCount }}</CBadge>
         </CHeaderNavLink>
       </CHeaderNavItem>
 
       <TheHeaderDropdownAccnt />
     </CHeaderNav>
     <CSubheader class="px-3">
-      <CBreadcrumbRouter class="border-0 mb-0" />
+      <CBreadcrumbRouter class="border-0 mb-0" style="font-size:24px;font-weight:bold;" />
     </CSubheader>
   </CHeader>
 </template>
@@ -29,6 +31,11 @@ export default {
   name: 'TheHeader',
   components: {
     TheHeaderDropdownAccnt,
+  },
+  data() {
+    return {
+      itemsCount: 4,
+    };
   },
 };
 </script>

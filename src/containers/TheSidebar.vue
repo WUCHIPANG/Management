@@ -51,13 +51,28 @@ export default {
               icon: 'cilSearch',
               items: [
                 {
-                  name: '員工紀錄',
-                  to: '/Employee',
+                  name: '進行中派單',
+                  to: '/TaskList',
+                  icon: 'cil-chevron-right',
+                },
+                {
+                  name: '歷史派工紀錄',
+                  to: '/HistoryTask',
+                  icon: 'cil-chevron-right',
+                },
+                {
+                  name: '出勤紀錄',
+                  to: '/Attendance',
                   icon: 'cil-chevron-right',
                 },
                 {
                   name: '護理站紀錄',
                   to: '/NursingStation',
+                  icon: 'cil-chevron-right',
+                },
+                {
+                  name: '補單',
+                  to: '/MgmtAddTask',
                   icon: 'cil-chevron-right',
                 },
                 {
@@ -74,7 +89,7 @@ export default {
               icon: 'cilPenNib',
               items: [
                 {
-                  name: '員工管理',
+                  name: '人員管理',
                   to: '/EmpoyeeMgmt',
                   icon: 'cil-chevron-right',
                 },
@@ -84,11 +99,40 @@ export default {
                   icon: 'cil-chevron-right',
                 },
                 {
-                  name: '派遣選項管理',
-                  to: '/OptionMgmt',
+                  name: '公告',
+                  to: '/Announcement',
                   icon: 'cil-chevron-right',
                 },
+                // {
+                //   name: '派遣選項管理',
+                //   to: '/OptionMgmt',
+                //   icon: 'cil-chevron-right',
+                // },
               ],
+            },
+            // {
+            //   _name: 'CSidebarNavDropdown',
+            //   name: 'XXX',
+            //   route: '/other',
+            //   icon: 'cilSearch',
+            //   items: [
+            //     {
+            //       name: '補單',
+            //       to: '/TaskList',
+            //       icon: 'cil-chevron-right',
+            //     },
+            //     {
+            //       name: '公告',
+            //       to: '/Announcement',
+            //       icon: 'cil-chevron-right',
+            //     },
+            //   ],
+            // },
+            {
+              _name: 'CSidebarNavItem',
+              name: '系統設定',
+              to: '/system',
+              icon: 'cil-people',
             },
           ],
         },

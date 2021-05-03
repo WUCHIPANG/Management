@@ -86,7 +86,8 @@ import {
   cilMug,
   cilFindInPage,
   cilSearch,
-  cilPenNib
+  cilPenNib,
+  cilDelete
 
 } from '@coreui/icons'
 import { logo } from './logo'
@@ -148,7 +149,8 @@ export const iconsSet = Object.assign(
     cilMug,
     cilFindInPage,
     cilSearch,
-    cilPenNib
+    cilPenNib,
+    cilDelete
   },
   {
     cifUs,
