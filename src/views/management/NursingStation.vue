@@ -4,7 +4,9 @@
       <CCardBody>
         <CRow>
           <CCol class="selectHight" sm="1" style="line-height:30px;">護理站</CCol>
-          <CCol class="selectHight" style="margin-left:-30px;"> <CSelect horizontal :options="['A08-B', 'A07-A']" /> </CCol>
+          <CCol class="selectHight" style="margin-left:-30px;">
+            <CSelect horizontal :options="['A08-B', 'A07-A']" />
+          </CCol>
           <CCol class="selectHight" style="margin-left:-50px;"> <CSelect horizontal :options="['今天', '昨天']" /> </CCol>
           <CCol></CCol>
           <CCol></CCol>

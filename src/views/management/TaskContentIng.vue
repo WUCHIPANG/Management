@@ -25,7 +25,7 @@
 
           <CInput label="開始時間" horizontal placeholder="2021/04/19 21:06:53" disabled />
           <CInput label="完成時間" v-if="complete" horizontal placeholder="2021/04/19 22:01:23" disabled />
-          <CInput label="派遣人員" horizontal placeholder="曾哲嘉" disabled />
+          <CInput label="傳送人員" horizontal placeholder="曾哲嘉" disabled />
           <CInput label="派單護理站" horizontal placeholder="B022" disabled />
           <CInput label="起始地點" horizontal placeholder="3F護理站" disabled />
           <CInput label="目的地" horizontal placeholder="8F檢查室" disabled />

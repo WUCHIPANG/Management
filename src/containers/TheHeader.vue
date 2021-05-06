@@ -12,14 +12,14 @@
         <CHeaderNavLink>
           <CIcon name="cil-bell" />
           <!-- 有新派單時出現 -->
-          <CBadge color="danger" class="mfs-auto">{{ itemsCount }}</CBadge>
+          <CBadge color="danger" class="mfs-auto badgeFont">{{ itemsCount }}</CBadge>
         </CHeaderNavLink>
       </CHeaderNavItem>
 
       <TheHeaderDropdownAccnt />
     </CHeaderNav>
     <CSubheader class="px-3">
-      <CBreadcrumbRouter class="border-0 mb-0" style="font-size:24px;font-weight:bold;" />
+      <CBreadcrumbRouter class="border-0 mb-0 routerFont" />
     </CSubheader>
   </CHeader>
 </template>

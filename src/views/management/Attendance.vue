@@ -1,8 +1,13 @@
 <template>
-  <CCard style="font-size:28px;">
+  <CCard>
     <CCardBody>
       <CRow>
-        <CCol class="selectHight"> <CSelect horizontal :options="['今天', '昨天']" /> </CCol>
+        <CCol class="selectHight">
+          <select id="uid-v6uk3e8d5p9" class="form-control selectFont">
+            <option data-key="0" value="今天"> 今天 </option>
+            <option data-key="1" value="昨天"> 昨天 </option>
+          </select>
+        </CCol>
         <CCol> </CCol>
       </CRow>
       <CDataTable :items="items" :fields="fields" :items-per-page="10" hover sorter pagination> </CDataTable>
@@ -14,9 +19,6 @@ export default {
   name: 'Employee',
   data() {
     return {
-      // items: items.map((item, id) => {
-      //   return { ...item, id };
-      // }),
       items: [
         { Eid: 'B001', name: '趙明倫', date: '2021/4/20', start: '08:25', complete: '18:29', time: '8小時04分' },
         { Eid: 'B002', name: '曾哲嘉', date: '2021/4/20', start: '08:30', complete: '18:40', time: '8小時10分' },

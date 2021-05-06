@@ -1,5 +1,5 @@
 <template>
-  <div style="font-size:28px;">
+  <div>
     <CCard>
       <CCardBody>
         <CForm>

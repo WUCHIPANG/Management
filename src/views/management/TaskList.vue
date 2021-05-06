@@ -1,5 +1,5 @@
 <template>
-  <div style="font-size:28px;">
+  <div>
     <CCard>
       <CCardBody>
         <CDataTable :items="items" :fields="fields" table-filter column-filter items-per-page-select :items-per-page="10" hover sorter pagination>

@@ -1,7 +1,8 @@
 <template>
-  <div style="font-size:28px;">
+  <div>
     <CCard>
       <CCardBody>
+        <!-- filter/item改中文 檔案在node_modules/@coreui/vue/dist/coreui-vue.common -->
         <CDataTable :items="items" :fields="fields" table-filter column-filter items-per-page-select :items-per-page="5" hover sorter pagination>
           <template #status="{item}">
             <td>

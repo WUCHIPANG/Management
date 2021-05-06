@@ -1,8 +1,13 @@
 <template>
-  <CCard style="font-size:28px;">
+  <CCard>
     <CCardBody>
       <CRow>
-        <CCol class="selectHight"> <CSelect horizontal :options="['今天', '昨天']" /> </CCol>
+        <CCol class="selectHight">
+          <select id="uid-v6uk3e8d5p9" class="form-control selectFont">
+            <option data-key="0" value="今天"> 今天 </option>
+            <option data-key="1" value="昨天"> 昨天 </option>
+          </select>
+        </CCol>
         <CCol> </CCol>
       </CRow>
       <CDataTable :items="work_items" :fields="work_fields" :items-per-page="10" column-filter hover sorter pagination> </CDataTable>
@@ -60,7 +65,7 @@ export default {
     // },
     fields() {
       return [
-        { key: 'Eid', label: '員工編號' },
+        { key: 'Eid', label: '人員編號' },
         { key: 'name', label: '姓名' },
         { key: 'date', label: '日期' },
         { key: 'start', label: '上班時間' },
@@ -69,7 +74,7 @@ export default {
     },
     work_fields() {
       return [
-        { key: 'Eid', label: '員工編號' },
+        { key: 'Eid', label: '人員編號' },
         { key: 'name', label: '姓名' },
         { key: 'taskNum', label: '派單編號' },
         { key: 'task', label: '任務內容' },
@@ -107,5 +112,3 @@ export default {
   },
 };
 </script>
-<style>
-
