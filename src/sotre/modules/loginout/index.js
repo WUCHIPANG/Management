@@ -24,7 +24,7 @@ const actions = {
       .reverse()
       .join('')
 
-    if (data.user == 'demo' && secret.Decrypt(data.password) == user) {
+    if (secret.Decrypt(data.password) == user) {
       commit(types.SETTOKEN, data)
       window.sessionStorage.setItem('user', data.user)
       router.push('/distribution')

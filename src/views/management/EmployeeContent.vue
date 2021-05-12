@@ -9,6 +9,7 @@
         <CInput label="姓名" :placeholder="name" horizontal disabled style="font-size:28px'" />
         <CInput label="出生年月日" placeholder="1984/06/16" horizontal disabled />
         <!-- <CInput label="出生年月日" :placeholder="name" horizontal disabled /> -->
+        <CInput label="密碼" placeholder="********" type="password" horizontal />
         <CRow class="radio">
           <CCol sm="3">
             性別

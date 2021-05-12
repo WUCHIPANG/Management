@@ -134,6 +134,12 @@ export default {
               to: '/system',
               icon: 'cil-people',
             },
+            {
+              _name: 'CSidebarNavItem',
+              name: '推播測試',
+              to: '/pushTest',
+              icon: 'cil-speech',
+            },
           ],
         },
       ];

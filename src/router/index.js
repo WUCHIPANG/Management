@@ -137,6 +137,11 @@ function configRoutes () {
           path: 'system',
           name: '系統設定',
           component: resolve => require(['@/views/management/System'], resolve)
+        },
+         {
+          path: 'pushTest',
+          name: '推播測試',
+          component: resolve => require(['@/views/management/PushTest'], resolve)
         }
       ]
     },
