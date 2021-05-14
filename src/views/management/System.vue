@@ -66,6 +66,27 @@
         </CRow>
       </CCardBody>
     </CCard>
+    <CCard>
+      <CCardHeader>
+        接單數量設定
+      </CCardHeader>
+      <CCardBody>
+        <CRow>
+          <CCol> <CSelect label="數量" horizontal :options="['1', '2']" placeholder="" v-model="optionsType" style="width:400px"/></CCol>
+          <CCol style="margin-top:-5px;margin-left:100px">張</CCol>
+          <CCol></CCol>
+          <CCol></CCol>
+          <CCol></CCol>
+        </CRow>
+        <!-- <CRow>
+          <CCol> <CSelect label="第二層" horizontal :options="['10']" placeholder="" v-model="optionsType" style="width:400px"/></CCol>
+          <CCol style="margin-top:5px; margin-left:100px">分鐘</CCol>
+          <CCol></CCol>
+          <CCol></CCol>
+          <CCol></CCol>
+        </CRow> -->
+      </CCardBody>
+    </CCard>
   </div>
 </template>
 <script>
